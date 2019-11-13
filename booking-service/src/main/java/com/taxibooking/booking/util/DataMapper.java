@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
  *
  * @author vinodkandula
  */
+@SuppressWarnings( "deprecation" )
 public class DataMapper extends ObjectMapper {
 
     private static volatile DataMapper dataMapper;
