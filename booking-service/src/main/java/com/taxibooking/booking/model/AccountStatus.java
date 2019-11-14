@@ -6,17 +6,17 @@ package com.taxibooking.booking.model;
  * @author vinodkandula
  */
 public enum AccountStatus {
+  ACTIVE("ACTIVE"),
+  INACTIVE("INACTIVE");
 
-    ACTIVE("ACTIVE"), INACTIVE("INACTIVE");
+  private String status;
 
-    private String status;
+  AccountStatus(String status) {
+    this.status = status;
+  }
 
-    AccountStatus(String status) {
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return this.status;
-    }
+  @Override
+  public String toString() {
+    return this.status;
+  }
 }

@@ -1,12 +1,6 @@
-/**
- * 
- */
 package com.taxibooking.location.service.google;
 
-/**
- * @author vinodkandula
- *
- */
+/** @author vinodkandula */
 public class InvalidGoogleApiResponseException extends Exception {
 
 }

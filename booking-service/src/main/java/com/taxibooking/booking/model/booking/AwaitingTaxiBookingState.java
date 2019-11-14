@@ -11,42 +11,40 @@ import com.taxibooking.booking.model.taxi.Taxi;
  */
 public class AwaitingTaxiBookingState implements BookingState {
 
-    @Override
-    public void cancelBooking(Booking booking) {
-        booking.setState(
-                Booking.getCancelledBookingState());
+  @Override
+  public void cancelBooking(Booking booking) {
+    booking.setState(Booking.getCancelledBookingState());
+  }
+
+  @Override
+  public void cancelTaxi(Booking booking) {
+    throw new IllegalStateException("Taxi not dispatched.");
+  }
+
+  @Override
+  public void dispatchTaxi(Booking booking, Taxi taxi) {
+
+    booking.setState(Booking.getTaxiDispatchedBookingState());
+
+    if (!taxi.checkseatAvailability(booking.getNumberPassengers())) {
+      throw new IllegalStateException("The taxi does not have enough seats.");
     }
 
-    @Override
-    public void cancelTaxi(Booking booking) {
-        throw new IllegalStateException("Taxi not dispatched.");
-    }
+    booking.setTaxi(taxi);
+  }
 
-    @Override
-    public void dispatchTaxi(Booking booking, Taxi taxi) {
+  @Override
+  public void dropOffPassenger(Booking booking, Date time) {
+    throw new IllegalStateException("Passenger not picked up");
+  }
 
-        booking.setState(
-                Booking.getTaxiDispatchedBookingState());
+  @Override
+  public void pickupPassenger(Booking booking, Date time) {
+    throw new IllegalStateException("Taxi not yet dispatched.");
+  }
 
-        if (!taxi.checkseatAvailability(booking.getNumberPassengers())) {
-            throw new IllegalStateException("The taxi does not have enough seats.");
-        }
-
-        booking.setTaxi(taxi);
-    }
-
-    @Override
-    public void dropOffPassenger(Booking booking, Date time) {
-        throw new IllegalStateException("Passenger not picked up");
-    }
-
-    @Override
-    public void pickupPassenger(Booking booking, Date time) {
-        throw new IllegalStateException("Taxi not yet dispatched.");
-    }
-
-    @Override
-    public String toString() {
-        return "Awaiting taxi.";
-    }
+  @Override
+  public String toString() {
+    return "Awaiting taxi.";
+  }
 }

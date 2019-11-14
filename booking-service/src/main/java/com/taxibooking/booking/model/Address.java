@@ -21,78 +21,67 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "ADDRESS")
 public class Address implements Serializable {
-    
-    @Transient
-    private static final long serialVersionUID = 1833058791696309083L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "LOCATION_ID")
-    private Location location;
+  @Transient private static final long serialVersionUID = 1833058791696309083L;
 
-    @Column(name = "STREET_ADDRESS")
-    private String streetAddress;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    public Address() {
-        // Needed by JPA.
-    }
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "LOCATION_ID")
+  private Location location;
 
-    /**
-     * Constructor for class address.
-     *
-     * @param streetAddress address the street address e.g. 30 Cheviots, Hatfield, AL10 8JD.
-     * @param location latitude and longitude location of address.
-     */
-    public Address(String streetAddress, Location location) {
-        this.streetAddress = streetAddress;
-        this.location = location;
-    }
+  @Column(name = "STREET_ADDRESS")
+  private String streetAddress;
 
-    /**
-     * @return the location
-     */
-    public Location getLocation() {
-        return location;
-    }
+  public Address() {
+    // Needed by JPA.
+  }
 
-    /**
-     * @param location the location to set
-     */
-    public void setLocation(Location location) {
-        this.location = location;
-    }
+  /**
+   * Constructor for class address.
+   *
+   * @param streetAddress address the street address e.g. 30 Cheviots, Hatfield, AL10 8JD.
+   * @param location latitude and longitude location of address.
+   */
+  public Address(String streetAddress, Location location) {
+    this.streetAddress = streetAddress;
+    this.location = location;
+  }
 
-    /**
-     * @return the street address.
-     */
-    public String getAddress() {
-        return streetAddress;
-    }
+  /** @return the location */
+  public Location getLocation() {
+    return location;
+  }
 
-    /**
-     * @param streetAddress the address to set
-     */
-    public void setAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
-    }
+  /** @param location the location to set */
+  public void setLocation(Location location) {
+    this.location = location;
+  }
 
-    /**
-     * @return record id.
-     */
-    @JsonIgnore
-    public Long getId() {
-        return id;
-    }
+  /** @return the street address. */
+  public String getAddress() {
+    return streetAddress;
+  }
 
-    /**
-     * Set id.
-     *
-     * @param id id.
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
+  /** @param streetAddress the address to set */
+  public void setAddress(String streetAddress) {
+    this.streetAddress = streetAddress;
+  }
+
+  /** @return record id. */
+  @JsonIgnore
+  public Long getId() {
+    return id;
+  }
+
+  /**
+   * Set id.
+   *
+   * @param id id.
+   */
+  public void setId(Long id) {
+    this.id = id;
+  }
 }

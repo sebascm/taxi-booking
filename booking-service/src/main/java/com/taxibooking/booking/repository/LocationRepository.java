@@ -6,11 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.taxibooking.booking.model.Location;
 
-/**
- * 
- *
- * @author vinodkandula
- */
+/** @author vinodkandula */
 @Transactional
-public interface LocationRepository extends JpaRepository<Location, Long> {
-}
+public interface LocationRepository extends JpaRepository<Location, Long> {}

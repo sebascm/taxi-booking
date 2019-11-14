@@ -7,14 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.taxibooking.booking.model.Account;
 import com.taxibooking.booking.model.taxi.Taxi;
 
-/**
- * 
- *
- * @author vinodkandula
- */
+/** @author vinodkandula */
 @Transactional
 public interface TaxiRepository extends JpaRepository<Taxi, Long> {
 
-	public Taxi findByAccount(Account account);
-
+  public Taxi findByAccount(Account account);
 }

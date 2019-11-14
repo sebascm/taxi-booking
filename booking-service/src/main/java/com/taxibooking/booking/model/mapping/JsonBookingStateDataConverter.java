@@ -14,9 +14,9 @@ import com.taxibooking.booking.model.booking.BookingState;
  */
 public class JsonBookingStateDataConverter extends JsonSerializer<BookingState> {
 
-    @Override
-    public void serialize(BookingState t, JsonGenerator jg, SerializerProvider sp) throws IOException {
-        jg.writeString(new JpaBookingStateDataConverter().convertToDatabaseColumn(t));
-    }
-
+  @Override
+  public void serialize(BookingState t, JsonGenerator jg, SerializerProvider sp)
+      throws IOException {
+    jg.writeString(new JpaBookingStateDataConverter().convertToDatabaseColumn(t));
+  }
 }

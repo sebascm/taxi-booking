@@ -6,11 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.taxibooking.booking.model.Route;
 
-/**
- *
- *
- * @author vinodkandula
- */
+/** @author vinodkandula */
 @Transactional
-public interface RouteRepository extends JpaRepository<Route, Long> {
-}
+public interface RouteRepository extends JpaRepository<Route, Long> {}

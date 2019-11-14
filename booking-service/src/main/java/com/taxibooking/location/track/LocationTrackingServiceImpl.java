@@ -19,66 +19,70 @@ import com.taxibooking.booking.repository.TaxiRepository;
 @Transactional
 public class LocationTrackingServiceImpl extends Subject implements LocationTrackingService {
 
-    private TaxiRepository taxiRepo;
-    
-    private LocationRepository locationRepo;
+  private TaxiRepository taxiRepo;
 
-    /**
-     * Update taxi location by id. Find taxi by id and set new location and
-     * broadcast update taxi location.
-     *
-     * @param id the id of the taxi.
-     * @param latitude Taxi's current latitude.
-     * @param longitude Taxi's current longitude.
-     * @param timestamp timestamp of event.
-     * @throws TaxiNotFoundException taxi not found.
-     * @IllegalArgumentException invalid latitude or longitude.
-     */
-    @Override
-    public synchronized void updateLocation(Long id, double latitude, double longitude, long timestamp) throws Exception {
-        Location lastKnownLocation;
+  private LocationRepository locationRepo;
 
-        try {
-            lastKnownLocation = new Location(latitude, longitude);
-        } catch (IllegalArgumentException ex) {
-            throw ex;
-        }
+  /**
+   * Update taxi location by id. Find taxi by id and set new location and broadcast update taxi
+   * location.
+   *
+   * @param id the id of the taxi.
+   * @param latitude Taxi's current latitude.
+   * @param longitude Taxi's current longitude.
+   * @param timestamp timestamp of event.
+   * @throws TaxiNotFoundException taxi not found. @IllegalArgumentException invalid latitude or
+   *     longitude.
+   */
+  @Override
+  public synchronized void updateLocation(
+      Long id, double latitude, double longitude, long timestamp) throws Exception {
+    Location lastKnownLocation;
 
-        Taxi taxi = this.taxiRepo.findOne(id);
-
-        if (taxi == null) {
-            throw new Exception("Taxi Not Found");
-        }
-
-        Location previousLocation = taxi.getLocation();
-        taxi.updateLocation(lastKnownLocation);
-
-        if (previousLocation == null) {
-            this.locationRepo.save(lastKnownLocation);
-        }
-
-        this.taxiRepo.save(taxi);
-
-        // create taxi location event suitable for data transfer.
-        TaxiLocationEventDto event = new TaxiLocationEventDto(id,
-                new JpaTaxiStateDataConverter().convertToDatabaseColumn(taxi.getState()),
-                lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude(),
-                timestamp);
-
-        //notify all taxi subscribers of updated taxi location
-        this.notifyObservers(event);
+    try {
+      lastKnownLocation = new Location(latitude, longitude);
+    } catch (IllegalArgumentException ex) {
+      throw ex;
     }
 
-    /**
-     * Notify observer if within grid reference or all.
-     *
-     * @param event
-     */
-    @Override
-    public void notifyObservers(TaxiLocationEventDto event) {
+    Taxi taxi = this.taxiRepo.findOne(id);
 
-        for (LocationTrackingObserver o : this.getObservers()) {
-            o.update(event);
-        }
+    if (taxi == null) {
+      throw new Exception("Taxi Not Found");
     }
+
+    Location previousLocation = taxi.getLocation();
+    taxi.updateLocation(lastKnownLocation);
+
+    if (previousLocation == null) {
+      this.locationRepo.save(lastKnownLocation);
+    }
+
+    this.taxiRepo.save(taxi);
+
+    // create taxi location event suitable for data transfer.
+    TaxiLocationEventDto event =
+        new TaxiLocationEventDto(
+            id,
+            new JpaTaxiStateDataConverter().convertToDatabaseColumn(taxi.getState()),
+            lastKnownLocation.getLatitude(),
+            lastKnownLocation.getLongitude(),
+            timestamp);
+
+    // notify all taxi subscribers of updated taxi location
+    this.notifyObservers(event);
+  }
+
+  /**
+   * Notify observer if within grid reference or all.
+   *
+   * @param event a
+   */
+  @Override
+  public void notifyObservers(TaxiLocationEventDto event) {
+
+    for (LocationTrackingObserver o : this.getObservers()) {
+      o.update(event);
+    }
+  }
 }

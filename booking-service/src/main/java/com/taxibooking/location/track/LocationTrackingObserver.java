@@ -7,10 +7,10 @@ package com.taxibooking.location.track;
  */
 public interface LocationTrackingObserver {
 
-    /**
-     * Method called whenever subject state changes.
-     *
-     * @param obj updated event.
-     */
-    public void update(Object obj);
+  /**
+   * Method called whenever subject state changes.
+   *
+   * @param obj updated event.
+   */
+  public void update(Object obj);
 }

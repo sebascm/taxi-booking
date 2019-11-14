@@ -6,11 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.taxibooking.booking.model.Vehicle;
 
-/**
- *
- *
- * @author vinodkandula
- */
+/** @author vinodkandula */
 @Transactional
-public interface VehicleRepository extends JpaRepository<Vehicle, String> {
-}
+public interface VehicleRepository extends JpaRepository<Vehicle, String> {}
