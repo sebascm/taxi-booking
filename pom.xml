@@ -122,6 +122,42 @@
             </execution>
           </executions>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.1.0</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>8.25</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <configLocation>src/main/config/google_checks.xml</configLocation>
+            <suppressionsLocation>src/main/config/suppressions.xml</suppressionsLocation>
+            <failOnViolation>true</failOnViolation>
+            <includeTestSourceDirectory>true</includeTestSourceDirectory>
+            <resourceIncludes>**/*.json, **/*.properties, **/*.proto, **/*.xml, **/*.yaml, **/*.yml</resourceIncludes>
+            <sourceDirectories>
+              <sourceDirectory>src/main/java</sourceDirectory>
+            </sourceDirectories>
+            <testSourceDirectories>
+              <testSourceDirectory>src/test/java</testSourceDirectory>
+              <testSourceDirectory>src/it/java</testSourceDirectory>
+            </testSourceDirectories>
+            <consoleOutput>true</consoleOutput>
+          </configuration>
+          <executions>
+            <execution>
+              <id>quality-metric-checkstyle</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
