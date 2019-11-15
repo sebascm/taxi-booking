@@ -166,6 +166,9 @@
           <groupId>com.github.spotbugs</groupId>
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>3.1.12</version>
+          <configuration>
+            <excludeFilterFile>src/main/config/spotbugs-exclude-filter.xml</excludeFilterFile>
+          </configuration>
           <executions>
             <execution>
               <id>quality-metric-spotbugs</id>
