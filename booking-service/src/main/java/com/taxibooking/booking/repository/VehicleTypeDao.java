@@ -6,11 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.taxibooking.booking.model.VehicleType;
 
-/**
- *
- *
- * @author vinodkandula
- */
+/** @author vinodkandula */
 @Transactional
-public interface VehicleTypeDao extends JpaRepository<VehicleType, Long> {
-}
+public interface VehicleTypeDao extends JpaRepository<VehicleType, Long> {}

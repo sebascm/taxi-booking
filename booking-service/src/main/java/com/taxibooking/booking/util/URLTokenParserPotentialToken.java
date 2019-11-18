@@ -5,34 +5,28 @@
  */
 package com.taxibooking.booking.util;
 
-/**
- *
- * @author vinodkandula
- */
+/** @author vinodkandula */
 public class URLTokenParserPotentialToken extends URLTokenParserState {
 
-	public URLTokenParserPotentialToken(URLTokenParser context) {
-		super(context);
-	}
+  public URLTokenParserPotentialToken(URLTokenParser context) {
+    super(context);
+  }
 
-	@Override
-	public void addLeftBracket() {
+  @Override
+  public void addLeftBracket() {}
 
-	}
+  @Override
+  public void addRightBracket() {
 
-	@Override
-	public void addRightBracket() {
+    String value = this.getContext().getKey(this.getContext().getTemp());
 
-		String value = this.getContext().getKey(this.getContext().getTemp());
+    // look in default application properties file.
+    if (value == null) {
+      throw new IllegalStateException("Property not found : " + this.getContext().getTemp());
+    }
 
-		// look in default application properties file.
-		if (value == null) {
-			throw new IllegalStateException("Property not found : "+this.getContext().getTemp());
-
-		}
-
-		this.getContext().setToken(value);
-		this.getContext().addToURL();
-		this.getContext().changeState(new URLTokenParserNoBracesState(this.getContext()));
-	}
+    this.getContext().setToken(value);
+    this.getContext().addToURL();
+    this.getContext().changeState(new URLTokenParserNoBracesState(this.getContext()));
+  }
 }

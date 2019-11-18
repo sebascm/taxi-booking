@@ -22,143 +22,124 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "ROUTE")
 public class Route implements Serializable {
-    
-    @Transient
-    private static final long serialVersionUID = -1765861964246272848L;
-    
-    @Column(name = "ID")
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
 
-    @JoinColumn(name = "START_LOCATION")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Address startAddress;
+  @Transient private static final long serialVersionUID = -1765861964246272848L;
 
-    @JoinColumn(name = "END_LOCATION")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Address endAddress;
+  @Column(name = "ID")
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
 
-    @Column(name = "DISTANCE")
-    private double distance;
+  @JoinColumn(name = "START_LOCATION")
+  @ManyToOne(cascade = CascadeType.ALL)
+  private Address startAddress;
 
-    @Column(name = "ESTIMATED_TRAVEL_TIME")
-    private double estimateTravelTime;
+  @JoinColumn(name = "END_LOCATION")
+  @ManyToOne(cascade = CascadeType.ALL)
+  private Address endAddress;
 
-    @Transient
-    private List<Location> path;
+  @Column(name = "DISTANCE")
+  private double distance;
 
-    public Route() {
-        // Empty constructor required by JPA.
-    }
+  @Column(name = "ESTIMATED_TRAVEL_TIME")
+  private double estimateTravelTime;
 
-    /**
-     * Constructor for class Route.
-     *
-     * @param startAddress start location of route.
-     * @param endAddress end location of route.
-     * @param distance route distance in meters.
-     * @param path recommended travel route.
-     * @param estimateTravelTime estimated travel time between start and end
-     * location in seconds.
-     */
-    public Route(Address startAddress, Address endAddress,
-            double distance, List<Location> path, double estimateTravelTime) {
+  @Transient private List<Location> path;
 
-        this.startAddress = startAddress;
-        this.endAddress = endAddress;
-        this.distance = distance;
-        this.estimateTravelTime = estimateTravelTime;
-        this.path = path;
-    }
+  public Route() {
+    // Empty constructor required by JPA.
+  }
 
-    /**
-     * @return the startAddress
-     */
-    public Address getStartAddress() {
-        return this.startAddress;
-    }
+  /**
+   * Constructor for class Route.
+   *
+   * @param startAddress start location of route.
+   * @param endAddress end location of route.
+   * @param distance route distance in meters.
+   * @param path recommended travel route.
+   * @param estimateTravelTime estimated travel time between start and end location in seconds.
+   */
+  public Route(
+      Address startAddress,
+      Address endAddress,
+      double distance,
+      List<Location> path,
+      double estimateTravelTime) {
 
-    /**
-     * @param startAddress the startAddress to set
-     */
-    public void setStartLocation(Address startAddress) {
-        this.startAddress = startAddress;
-    }
+    this.startAddress = startAddress;
+    this.endAddress = endAddress;
+    this.distance = distance;
+    this.estimateTravelTime = estimateTravelTime;
+    this.path = path;
+  }
 
-    /**
-     * @return the endAddress
-     */
-    public Address getEndAddress() {
-        return this.endAddress;
-    }
+  /** @return the startAddress */
+  public Address getStartAddress() {
+    return this.startAddress;
+  }
 
-    /**
-     * @param endAddress the endAddress to set
-     */
-    public void setEndAddress(Address endAddress) {
-        this.endAddress = endAddress;
-    }
+  /** @param startAddress the startAddress to set */
+  public void setStartLocation(Address startAddress) {
+    this.startAddress = startAddress;
+  }
 
-    /**
-     * @return the distance
-     */
-    public double getDistance() {
-        return this.distance;
-    }
+  /** @return the endAddress */
+  public Address getEndAddress() {
+    return this.endAddress;
+  }
 
-    /**
-     * @param distance the distance to set
-     */
-    public void setDistance(double distance) {
-        this.distance = distance;
-    }
+  /** @param endAddress the endAddress to set */
+  public void setEndAddress(Address endAddress) {
+    this.endAddress = endAddress;
+  }
 
-    /**
-     * @return the route
-     */
-    public List<Location> getPath() {
-        return this.path;
-    }
+  /** @return the distance */
+  public double getDistance() {
+    return this.distance;
+  }
 
-    /**
-     * @param path the route to set
-     */
-    public void setRoute(List<Location> path) {
-        this.path = path;
-    }
+  /** @param distance the distance to set */
+  public void setDistance(double distance) {
+    this.distance = distance;
+  }
 
-    /**
-     * @return the estimateTravelTime
-     */
-    public double getEstimateTravelTime() {
-        return this.estimateTravelTime;
-    }
+  /** @return the route */
+  public List<Location> getPath() {
+    return this.path;
+  }
 
-    /**
-     * @param estimateTravelTime the estimateTravelTime to set
-     */
-    public void setEstimateTravelTime(double estimateTravelTime) {
-        this.estimateTravelTime = estimateTravelTime;
-    }
+  /** @param path the route to set */
+  public void setRoute(List<Location> path) {
+    this.path = path;
+  }
 
-    /**
-     * Return distance in miles.
-     *
-     * @return distance in miles.
-     */
-    @JsonIgnore
-    public double getDistanceInMiles() {
-        return this.distance / 1609;
-    }
+  /** @return the estimateTravelTime */
+  public double getEstimateTravelTime() {
+    return this.estimateTravelTime;
+  }
 
-    /**
-     * Return time in minutes.
-     *
-     * @return time in minutes.
-     */
-    @JsonIgnore
-    public double getTimeInMinutes() {
-        return this.estimateTravelTime / 60;
-    }
+  /** @param estimateTravelTime the estimateTravelTime to set */
+  public void setEstimateTravelTime(double estimateTravelTime) {
+    this.estimateTravelTime = estimateTravelTime;
+  }
+
+  /**
+   * Return distance in miles.
+   *
+   * @return distance in miles.
+   */
+  @JsonIgnore
+  public double getDistanceInMiles() {
+    return this.distance / 1609;
+  }
+
+  /**
+   * Return time in minutes.
+   *
+   * @return time in minutes.
+   */
+  @JsonIgnore
+  public double getTimeInMinutes() {
+    return this.estimateTravelTime / 60;
+  }
 }

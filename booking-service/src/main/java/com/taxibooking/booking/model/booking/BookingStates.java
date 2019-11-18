@@ -6,21 +6,20 @@ package com.taxibooking.booking.model.booking;
  * @author vinodkandula
  */
 public enum BookingStates {
+  AWAITING_TAXI("AWAITING_TAXI"),
+  CANCELED_BOOKING("CANCELED_BOOKING"),
+  COMPLETED_BOOKING("COMPLETED_BOOKING"),
+  PASSENGER_PICKED_UP("PASSENGER_PICKED_UP"),
+  TAXI_DISPATCHED("TAXI_DISPATCHED");
 
-    AWAITING_TAXI("AWAITING_TAXI"),
-    CANCELED_BOOKING("CANCELED_BOOKING"),
-    COMPLETED_BOOKING("COMPLETED_BOOKING"),
-    PASSENGER_PICKED_UP("PASSENGER_PICKED_UP"),
-    TAXI_DISPATCHED("TAXI_DISPATCHED");
+  private final String description;
 
-    private final String description;
+  BookingStates(String description) {
+    this.description = description;
+  }
 
-    BookingStates(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return this.description;
-    }
+  @Override
+  public String toString() {
+    return this.description;
+  }
 }

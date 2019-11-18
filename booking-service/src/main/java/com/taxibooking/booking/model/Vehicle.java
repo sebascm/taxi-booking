@@ -19,88 +19,75 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "VEHICLE")
 public class Vehicle implements Serializable {
-    
-    @Transient
-    private static final long serialVersionUID = 7483538230786350749L;
 
-    @Id
-    @Column(name = "NUMBER_PLATE")
-    private String numberplate;
+  @Transient private static final long serialVersionUID = 7483538230786350749L;
 
-    // number of seats including driver
-    @Column(name = "NUMBER_SEATS")
-    private int numberSeats;
+  @Id
+  @Column(name = "NUMBER_PLATE")
+  private String numberplate;
 
-    @JoinColumn(name = "VEHICLE_TYPE_ID")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private VehicleType vehicleType;
+  // number of seats including driver
+  @Column(name = "NUMBER_SEATS")
+  private int numberSeats;
 
-    public Vehicle() {
-        // Empty constructor required by JPA.
-    }
+  @JoinColumn(name = "VEHICLE_TYPE_ID")
+  @ManyToOne(cascade = CascadeType.ALL)
+  private VehicleType vehicleType;
 
-    /**
-     * Constructor for class vehicle.
-     *
-     * @param numberplate vehicle numberplate.
-     * @param numberSeats vehicle seat capacity.
-     * @param vehicleType type of vehicle.
-     */
-    public Vehicle(String numberplate, int numberSeats, VehicleType vehicleType) {
-        this.numberplate = numberplate;
-        this.numberSeats = numberSeats;
-        this.vehicleType = vehicleType;
-    }
+  public Vehicle() {
+    // Empty constructor required by JPA.
+  }
 
-    /**
-     * Return flat rate cost of vehicle.
-     *
-     * @return flat rate cost of vehicle.
-     */
-    @JsonIgnore
-    public double getCostPerMile() {
-        return this.vehicleType.getCostPerMile();
-    }
+  /**
+   * Constructor for class vehicle.
+   *
+   * @param numberplate vehicle numberplate.
+   * @param numberSeats vehicle seat capacity.
+   * @param vehicleType type of vehicle.
+   */
+  public Vehicle(String numberplate, int numberSeats, VehicleType vehicleType) {
+    this.numberplate = numberplate;
+    this.numberSeats = numberSeats;
+    this.vehicleType = vehicleType;
+  }
 
-    /**
-     * @return the numberplate
-     */
-    public String getNumberplate() {
-        return numberplate;
-    }
+  /**
+   * Return flat rate cost of vehicle.
+   *
+   * @return flat rate cost of vehicle.
+   */
+  @JsonIgnore
+  public double getCostPerMile() {
+    return this.vehicleType.getCostPerMile();
+  }
 
-    /**
-     * @param numberplate the numberplate to set
-     */
-    public void setNumberplate(String numberplate) {
-        this.numberplate = numberplate;
-    }
+  /** @return the numberplate */
+  public String getNumberplate() {
+    return numberplate;
+  }
 
-    /**
-     * @return the numberSeats
-     */
-    public int getNumberSeats() {
-        return numberSeats;
-    }
+  /** @param numberplate the numberplate to set */
+  public void setNumberplate(String numberplate) {
+    this.numberplate = numberplate;
+  }
 
-    /**
-     * @param numberSeats the numberSeats to set
-     */
-    public void setNumberSeats(int numberSeats) {
-        this.numberSeats = numberSeats;
-    }
+  /** @return the numberSeats */
+  public int getNumberSeats() {
+    return numberSeats;
+  }
 
-    /**
-     * @return the vehicleType
-     */
-    public VehicleType getVehicleType() {
-        return vehicleType;
-    }
+  /** @param numberSeats the numberSeats to set */
+  public void setNumberSeats(int numberSeats) {
+    this.numberSeats = numberSeats;
+  }
 
-    /**
-     * @param vehicleType the vehicleType to set
-     */
-    public void setVehicleType(VehicleType vehicleType) {
-        this.vehicleType = vehicleType;
-    }
+  /** @return the vehicleType */
+  public VehicleType getVehicleType() {
+    return vehicleType;
+  }
+
+  /** @param vehicleType the vehicleType to set */
+  public void setVehicleType(VehicleType vehicleType) {
+    this.vehicleType = vehicleType;
+  }
 }

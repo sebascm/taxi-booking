@@ -12,22 +12,20 @@ import org.junit.Test;
  */
 public class VehicleTest {
 
-    private VehicleType type;
-    private Vehicle vehicle;
+  private VehicleType type;
+  private Vehicle vehicle;
 
-    @Before
-    public void setUp() {
-        type = new VehicleType("Taxi", "Ford", "Focus", 0.3);
-        vehicle = new Vehicle("AS10 AJ", 3, type);
-    }
+  @Before
+  public void setUp() {
+    type = new VehicleType("Taxi", "Ford", "Focus", 0.3);
+    vehicle = new Vehicle("AS10 AJ", 3, type);
+  }
 
-    /**
-     * Test check seat availability.
-     */
-    @Test
-    public void testCheckSeatchAvailability() {
+  /** Test check seat availability. */
+  @Test
+  public void testCheckSeatchAvailability() {
 
-        this.vehicle.setNumberSeats(5);
-        assertTrue(this.vehicle.getNumberSeats() == 5);
-    }
+    this.vehicle.setNumberSeats(5);
+    assertTrue(this.vehicle.getNumberSeats() == 5);
+  }
 }

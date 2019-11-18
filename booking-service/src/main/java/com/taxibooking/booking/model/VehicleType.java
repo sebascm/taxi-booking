@@ -17,98 +17,81 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "VEHICLE_TYPE")
 public class VehicleType implements Serializable {
-    
-    @Transient
-    private static final long serialVersionUID = 6556730065381319372L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
-    @Column(name = "NAME")
-    private String name;
+  @Transient private static final long serialVersionUID = 6556730065381319372L;
 
-    @Column(name = "MANUFACTURER")
-    private String manufacturer;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    @Column(name = "model")
-    private String model;
+  @Column(name = "NAME")
+  private String name;
 
-    @Column(name = "COST_PER_MILE")
-    private double costPerMile;
+  @Column(name = "MANUFACTURER")
+  private String manufacturer;
 
-    public VehicleType() {
-        // Empty constructor required by JPA.
-    }
+  @Column(name = "model")
+  private String model;
 
-    /**
-     * Default constructor for vehicle type class.
-     * 
-     * @param name name of vehicle.
-     * @param manufacturer vehicle manufacturer.
-     * @param model vehicle model.
-     * @param costPerMile cost per mile.
-     */
-    public VehicleType(String name, String manufacturer, String model, double costPerMile) {
-        this.name = name;
-        this.costPerMile = costPerMile;
-        this.manufacturer = manufacturer;
-        this.model = model;
-    }
+  @Column(name = "COST_PER_MILE")
+  private double costPerMile;
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
+  public VehicleType() {
+    // Empty constructor required by JPA.
+  }
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+  /**
+   * Default constructor for vehicle type class.
+   *
+   * @param name name of vehicle.
+   * @param manufacturer vehicle manufacturer.
+   * @param model vehicle model.
+   * @param costPerMile cost per mile.
+   */
+  public VehicleType(String name, String manufacturer, String model, double costPerMile) {
+    this.name = name;
+    this.costPerMile = costPerMile;
+    this.manufacturer = manufacturer;
+    this.model = model;
+  }
 
-    /**
-     * @return the cost per mile.
-     */
-    public double getCostPerMile() {
-        return this.costPerMile;
-    }
+  /** @return the name */
+  public String getName() {
+    return name;
+  }
 
-    /**
-     * @param costPerMile the cost to set
-     */
-    public void setCostPerMile(int costPerMile) {
-        this.costPerMile = costPerMile;
-    }
+  /** @param name the name to set */
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    /**
-     * @return the manufacturer
-     */
-    public String getManufacturer() {
-        return manufacturer;
-    }
+  /** @return the cost per mile. */
+  public double getCostPerMile() {
+    return this.costPerMile;
+  }
 
-    /**
-     * @param manufacturer the manufacturer to set
-     */
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
+  /** @param costPerMile the cost to set */
+  public void setCostPerMile(int costPerMile) {
+    this.costPerMile = costPerMile;
+  }
 
-    /**
-     * @return the model
-     */
-    public String getModel() {
-        return model;
-    }
+  /** @return the manufacturer */
+  public String getManufacturer() {
+    return manufacturer;
+  }
 
-    /**
-     * @param model the model to set
-     */
-    public void setModel(String model) {
-        this.model = model;
-    }
+  /** @param manufacturer the manufacturer to set */
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
+
+  /** @return the model */
+  public String getModel() {
+    return model;
+  }
+
+  /** @param model the model to set */
+  public void setModel(String model) {
+    this.model = model;
+  }
 }

@@ -4,222 +4,222 @@
 
   <!-- POM Relationships -->
 
-  <modelVersion />
-  <groupId />
-  <artifactId />
-  <version />
+  <modelVersion/>
+  <groupId/>
+  <artifactId/>
+  <version/>
 
   <parent>
-    <groupId />
-    <artifactId />
-    <version />
-    <relativePath />
+    <groupId/>
+    <artifactId/>
+    <version/>
+    <relativePath/>
   </parent>
 
   <modules>
-    <module />
+    <module/>
   </modules>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId />
-        <artifactId />
-        <version />
-        <type />
-        <classifier />
-        <scope />
-        <systemPath />
+        <groupId/>
+        <artifactId/>
+        <version/>
+        <type/>
+        <classifier/>
+        <scope/>
+        <systemPath/>
         <exclusions>
           <exclusion>
-            <artifactId />
-            <groupId />
+            <artifactId/>
+            <groupId/>
           </exclusion>
         </exclusions>
-        <optional />
+        <optional/>
       </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
     <dependency>
-      <groupId />
-      <artifactId />
-      <version />
-      <type />
-      <classifier />
-      <scope />
-      <systemPath />
+      <groupId/>
+      <artifactId/>
+      <version/>
+      <type/>
+      <classifier/>
+      <scope/>
+      <systemPath/>
       <exclusions>
         <exclusion>
-          <artifactId />
-          <groupId />
+          <artifactId/>
+          <groupId/>
         </exclusion>
       </exclusions>
-      <optional />
+      <optional/>
     </dependency>
   </dependencies>
 
   <prerequisites>
-    <maven />
+    <maven/>
   </prerequisites>
 
   <!-- ///////////////// -->
 
   <!-- Build Settings -->
 
-  <packaging />
+  <packaging/>
   <build>
-    <sourceDirectory />
-    <scriptSourceDirectory />
-    <testSourceDirectory />
-    <outputDirectory />
-    <testOutputDirectory />
+    <sourceDirectory/>
+    <scriptSourceDirectory/>
+    <testSourceDirectory/>
+    <outputDirectory/>
+    <testOutputDirectory/>
     <extensions>
       <extension>
-        <groupId />
-        <artifactId />
-        <version />
+        <groupId/>
+        <artifactId/>
+        <version/>
       </extension>
     </extensions>
-    <defaultGoal />
+    <defaultGoal/>
     <resources>
       <resource>
-        <targetPath />
-        <filtering />
-        <directory />
+        <targetPath/>
+        <filtering/>
+        <directory/>
         <includes>
-          <include />
+          <include/>
         </includes>
         <excludes>
-          <exclude />
+          <exclude/>
         </excludes>
       </resource>
     </resources>
     <testResources>
       <testResource>
-        <targetPath />
-        <filtering />
-        <directory />
+        <targetPath/>
+        <filtering/>
+        <directory/>
         <includes>
-          <include />
+          <include/>
         </includes>
         <excludes>
-          <exclude />
+          <exclude/>
         </excludes>
       </testResource>
     </testResources>
-    <directory />
-    <finalName />
+    <directory/>
+    <finalName/>
     <filters>
-      <filter />
+      <filter/>
     </filters>
     <pluginManagement>
       <plugins>
         <!-- Sort by groupId and artifactId (alphabetical) -->
         <plugin>
-          <groupId />
-          <artifactId />
-          <version />
-          <inherited />
-          <extensions />
+          <groupId/>
+          <artifactId/>
+          <version/>
+          <inherited/>
+          <extensions/>
           <dependencies>
             <dependency>
-              <groupId />
-              <artifactId />
-              <version />
-              <type />
-              <classifier />
-              <scope />
-              <systemPath />
+              <groupId/>
+              <artifactId/>
+              <version/>
+              <type/>
+              <classifier/>
+              <scope/>
+              <systemPath/>
               <exclusions>
                 <exclusion>
-                  <artifactId />
-                  <groupId />
+                  <artifactId/>
+                  <groupId/>
                 </exclusion>
               </exclusions>
-              <optional />
+              <optional/>
             </dependency>
           </dependencies>
-          <configuration />
+          <configuration/>
           <executions>
             <execution>
-              <id />
-              <phase />
+              <id/>
+              <phase/>
               <goals>
-                <goal />
+                <goal/>
               </goals>
-              <inherited />
-              <configuration />
+              <inherited/>
+              <configuration/>
             </execution>
           </executions>
-          <goals />
+          <goals/>
         </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
-        <groupId />
-        <artifactId />
-        <version />
-        <inherited />
-        <extensions />
+        <groupId/>
+        <artifactId/>
+        <version/>
+        <inherited/>
+        <extensions/>
         <dependencies>
           <dependency>
-            <groupId />
-            <artifactId />
-            <version />
-            <type />
-            <classifier />
-            <scope />
-            <systemPath />
+            <groupId/>
+            <artifactId/>
+            <version/>
+            <type/>
+            <classifier/>
+            <scope/>
+            <systemPath/>
             <exclusions>
               <exclusion>
-                <artifactId />
-                <groupId />
+                <artifactId/>
+                <groupId/>
               </exclusion>
             </exclusions>
-            <optional />
+            <optional/>
           </dependency>
         </dependencies>
-        <configuration />
+        <configuration/>
         <executions>
           <execution>
-            <id />
-            <phase />
+            <id/>
+            <phase/>
             <goals>
-              <goal />
+              <goal/>
             </goals>
-            <inherited />
-            <configuration />
+            <inherited/>
+            <configuration/>
           </execution>
         </executions>
-        <goals />
+        <goals/>
       </plugin>
     </plugins>
   </build>
 
-  <reports />
+  <reports/>
   <reporting>
-    <excludeDefaults />
-    <outputDirectory />
+    <excludeDefaults/>
+    <outputDirectory/>
     <plugins>
       <plugin>
-        <groupId />
-        <artifactId />
-        <version />
+        <groupId/>
+        <artifactId/>
+        <version/>
         <reportSets>
           <reportSet>
-            <id />
+            <id/>
             <reports>
-              <report />
+              <report/>
             </reports>
-            <inherited />
-            <configuration />
+            <inherited/>
+            <configuration/>
           </reportSet>
         </reportSets>
-        <inherited />
-        <configuration />
+        <inherited/>
+        <configuration/>
       </plugin>
     </plugins>
   </reporting>
@@ -228,36 +228,36 @@
 
   <!-- Project Information -->
 
-  <name />
-  <url />
-  <inceptionYear />
+  <name/>
+  <url/>
+  <inceptionYear/>
   <licenses>
     <license>
-      <name />
-      <url />
-      <distribution />
-      <comments />
+      <name/>
+      <url/>
+      <distribution/>
+      <comments/>
     </license>
   </licenses>
-  <description />
+  <description/>
   <organization>
-    <name />
-    <url />
+    <name/>
+    <url/>
   </organization>
 
 
   <developers>
     <developer>
-      <id />
-      <name />
-      <email />
-      <url />
-      <organization />
-      <organizationUrl />
+      <id/>
+      <name/>
+      <email/>
+      <url/>
+      <organization/>
+      <organizationUrl/>
       <roles>
-        <role />
+        <role/>
       </roles>
-      <timezone />
+      <timezone/>
       <properties>
         <key></key>
       </properties>
@@ -265,15 +265,15 @@
   </developers>
   <contributors>
     <contributor>
-      <name />
-      <email />
-      <url />
-      <organization />
-      <organizationUrl />
+      <name/>
+      <email/>
+      <url/>
+      <organization/>
+      <organizationUrl/>
       <roles>
-        <role />
+        <role/>
       </roles>
-      <timezone />
+      <timezone/>
       <properties>
         <key></key>
       </properties>
@@ -286,40 +286,40 @@
 
   <mailingLists>
     <mailingList>
-      <name />
-      <subscribe />
-      <unsubscribe />
-      <post />
-      <archive />
+      <name/>
+      <subscribe/>
+      <unsubscribe/>
+      <post/>
+      <archive/>
       <otherArchives>
-        <otherArchive />
+        <otherArchive/>
       </otherArchives>
     </mailingList>
   </mailingLists>
 
   <scm>
-    <developerConnection />
-    <connection />
-    <url />
-    <tag />
+    <developerConnection/>
+    <connection/>
+    <url/>
+    <tag/>
   </scm>
 
   <issueManagement>
-    <system />
-    <url />
+    <system/>
+    <url/>
   </issueManagement>
 
   <ciManagement>
-    <system />
-    <url />
+    <system/>
+    <url/>
     <notifiers>
       <notifier>
-        <type />
-        <sendOnError />
-        <sendOnFailure />
-        <sendOnSuccess />
-        <sendOnWarning />
-        <address />
+        <type/>
+        <sendOnError/>
+        <sendOnFailure/>
+        <sendOnSuccess/>
+        <sendOnWarning/>
+        <address/>
         <configuration>
           <key></key>
         </configuration>
@@ -334,175 +334,175 @@
   <repositories>
     <repository>
       <releases>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </releases>
       <snapshots>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </snapshots>
-      <id />
-      <name />
-      <url />
-      <layout />
+      <id/>
+      <name/>
+      <url/>
+      <layout/>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <releases>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </releases>
       <snapshots>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </snapshots>
-      <id />
-      <name />
-      <url />
-      <layout />
+      <id/>
+      <name/>
+      <url/>
+      <layout/>
     </pluginRepository>
   </pluginRepositories>
 
   <profiles>
     <profile>
-      <id />
+      <id/>
       <activation>
-        <activeByDefault />
-        <jdk />
+        <activeByDefault/>
+        <jdk/>
         <os>
-          <name />
-          <family />
-          <arch />
-          <version />
+          <name/>
+          <family/>
+          <arch/>
+          <version/>
         </os>
         <property>
-          <name />
-          <value />
+          <name/>
+          <value/>
         </property>
         <file>
-          <missing />
-          <exists />
+          <missing/>
+          <exists/>
         </file>
       </activation>
       <build>
-        <defaultGoal />
+        <defaultGoal/>
         <resources>
           <resource>
-            <targetPath />
-            <filtering />
-            <directory />
+            <targetPath/>
+            <filtering/>
+            <directory/>
             <includes>
-              <include />
+              <include/>
             </includes>
             <excludes>
-              <exclude />
+              <exclude/>
             </excludes>
           </resource>
         </resources>
         <testResources>
           <testResource>
-            <targetPath />
-            <filtering />
-            <directory />
+            <targetPath/>
+            <filtering/>
+            <directory/>
             <includes>
-              <include />
+              <include/>
             </includes>
             <excludes>
-              <exclude />
+              <exclude/>
             </excludes>
           </testResource>
         </testResources>
-        <directory />
-        <finalName />
+        <directory/>
+        <finalName/>
         <filters>
-          <filter />
+          <filter/>
         </filters>
         <pluginManagement>
           <plugins>
             <plugin>
-              <groupId />
-              <artifactId />
-              <version />
-              <extensions />
+              <groupId/>
+              <artifactId/>
+              <version/>
+              <extensions/>
               <executions>
                 <execution>
-                  <id />
-                  <phase />
+                  <id/>
+                  <phase/>
                   <goals>
-                    <goal />
+                    <goal/>
                   </goals>
-                  <inherited />
-                  <configuration />
+                  <inherited/>
+                  <configuration/>
                 </execution>
               </executions>
               <dependencies>
                 <dependency>
-                  <groupId />
-                  <artifactId />
-                  <version />
-                  <type />
-                  <classifier />
-                  <scope />
-                  <systemPath />
+                  <groupId/>
+                  <artifactId/>
+                  <version/>
+                  <type/>
+                  <classifier/>
+                  <scope/>
+                  <systemPath/>
                   <exclusions>
                     <exclusion>
-                      <artifactId />
-                      <groupId />
+                      <artifactId/>
+                      <groupId/>
                     </exclusion>
                   </exclusions>
-                  <optional />
+                  <optional/>
                 </dependency>
               </dependencies>
-              <goals />
-              <inherited />
-              <configuration />
+              <goals/>
+              <inherited/>
+              <configuration/>
             </plugin>
           </plugins>
         </pluginManagement>
         <plugins>
           <plugin>
-            <groupId />
-            <artifactId />
-            <version />
-            <extensions />
+            <groupId/>
+            <artifactId/>
+            <version/>
+            <extensions/>
             <executions>
               <execution>
-                <id />
-                <phase />
+                <id/>
+                <phase/>
                 <goals>
-                  <goal />
+                  <goal/>
                 </goals>
-                <inherited />
-                <configuration />
+                <inherited/>
+                <configuration/>
               </execution>
             </executions>
             <dependencies>
               <dependency>
-                <groupId />
-                <artifactId />
-                <version />
-                <type />
-                <classifier />
-                <scope />
-                <systemPath />
+                <groupId/>
+                <artifactId/>
+                <version/>
+                <type/>
+                <classifier/>
+                <scope/>
+                <systemPath/>
                 <exclusions>
                   <exclusion>
-                    <artifactId />
-                    <groupId />
+                    <artifactId/>
+                    <groupId/>
                   </exclusion>
                 </exclusions>
-                <optional />
+                <optional/>
               </dependency>
             </dependencies>
-            <goals />
-            <inherited />
-            <configuration />
+            <goals/>
+            <inherited/>
+            <configuration/>
           </plugin>
         </plugins>
       </build>
@@ -510,100 +510,100 @@
       <dependencyManagement>
         <dependencies>
           <dependency>
-            <groupId />
-            <artifactId />
-            <version />
-            <type />
-            <classifier />
-            <scope />
-            <systemPath />
+            <groupId/>
+            <artifactId/>
+            <version/>
+            <type/>
+            <classifier/>
+            <scope/>
+            <systemPath/>
             <exclusions>
               <exclusion>
-                <artifactId />
-                <groupId />
+                <artifactId/>
+                <groupId/>
               </exclusion>
             </exclusions>
-            <optional />
+            <optional/>
           </dependency>
         </dependencies>
       </dependencyManagement>
       <dependencies>
         <dependency>
-          <groupId />
-          <artifactId />
-          <version />
-          <type />
-          <classifier />
-          <scope />
-          <systemPath />
+          <groupId/>
+          <artifactId/>
+          <version/>
+          <type/>
+          <classifier/>
+          <scope/>
+          <systemPath/>
           <exclusions>
             <exclusion>
-              <artifactId />
-              <groupId />
+              <artifactId/>
+              <groupId/>
             </exclusion>
           </exclusions>
-          <optional />
+          <optional/>
         </dependency>
       </dependencies>
 
       <repositories>
         <repository>
           <releases>
-            <enabled />
-            <updatePolicy />
-            <checksumPolicy />
+            <enabled/>
+            <updatePolicy/>
+            <checksumPolicy/>
           </releases>
           <snapshots>
-            <enabled />
-            <updatePolicy />
-            <checksumPolicy />
+            <enabled/>
+            <updatePolicy/>
+            <checksumPolicy/>
           </snapshots>
-          <id />
-          <name />
-          <url />
-          <layout />
+          <id/>
+          <name/>
+          <url/>
+          <layout/>
         </repository>
       </repositories>
       <pluginRepositories>
         <pluginRepository>
           <releases>
-            <enabled />
-            <updatePolicy />
-            <checksumPolicy />
+            <enabled/>
+            <updatePolicy/>
+            <checksumPolicy/>
           </releases>
           <snapshots>
-            <enabled />
-            <updatePolicy />
-            <checksumPolicy />
+            <enabled/>
+            <updatePolicy/>
+            <checksumPolicy/>
           </snapshots>
-          <id />
-          <name />
-          <url />
-          <layout />
+          <id/>
+          <name/>
+          <url/>
+          <layout/>
         </pluginRepository>
       </pluginRepositories>
 
-      <reports />
+      <reports/>
       <reporting>
-        <excludeDefaults />
-        <outputDirectory />
+        <excludeDefaults/>
+        <outputDirectory/>
         <plugins>
           <plugin>
-            <groupId />
-            <artifactId />
-            <version />
+            <groupId/>
+            <artifactId/>
+            <version/>
             <reportSets>
               <reportSet>
-                <id />
+                <id/>
                 <reports>
-                  <report />
+                  <report/>
                 </reports>
-                <inherited />
-                <configuration />
+                <inherited/>
+                <configuration/>
               </reportSet>
             </reportSets>
-            <inherited />
-            <configuration />
+            <inherited/>
+            <configuration/>
           </plugin>
         </plugins>
       </reporting>
@@ -616,52 +616,52 @@
 
   <distributionManagement>
     <repository>
-      <uniqueVersion />
+      <uniqueVersion/>
       <releases>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </releases>
       <snapshots>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </snapshots>
-      <id />
-      <name />
-      <url />
-      <layout />
+      <id/>
+      <name/>
+      <url/>
+      <layout/>
     </repository>
     <snapshotRepository>
-      <uniqueVersion />
+      <uniqueVersion/>
       <releases>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </releases>
       <snapshots>
-        <enabled />
-        <updatePolicy />
-        <checksumPolicy />
+        <enabled/>
+        <updatePolicy/>
+        <checksumPolicy/>
       </snapshots>
-      <id />
-      <name />
-      <url />
-      <layout />
+      <id/>
+      <name/>
+      <url/>
+      <layout/>
     </snapshotRepository>
     <site>
-      <id />
-      <name />
-      <url />
+      <id/>
+      <name/>
+      <url/>
     </site>
-    <downloadUrl />
+    <downloadUrl/>
     <relocation>
-      <groupId />
-      <artifactId />
-      <version />
-      <message />
+      <groupId/>
+      <artifactId/>
+      <version/>
+      <message/>
     </relocation>
-    <status />
+    <status/>
   </distributionManagement>
 
   <!-- ///////////////////////////////////// -->
