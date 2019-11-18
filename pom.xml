@@ -50,9 +50,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <prerequisites>
-    <maven>3.1.1</maven>
-  </prerequisites>
   <packaging>pom</packaging>
 
   <!-- ///////////////// -->
