@@ -50,6 +50,9 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <prerequisites>
+    <maven>3.1.1</maven>
+  </prerequisites>
   <packaging>pom</packaging>
 
   <!-- ///////////////// -->
@@ -79,110 +82,110 @@
             <targetJdk>${java.version}</targetJdk>
           </configuration>
         </plugin>
-        <plugin>
-          <groupId>com.github.ekryd.sortpom</groupId>
-          <artifactId>sortpom-maven-plugin</artifactId>
-          <version>2.10.0</version>
-          <configuration>
-            <sortOrderFile>src/main/config/pom_stylesheet.xml</sortOrderFile>
-            <lineSeparator>\n</lineSeparator>
-            <encoding>${project.build.sourceEncoding}</encoding>
-            <sortProperties>true</sortProperties>
-            <keepBlankLines>true</keepBlankLines>
-            <sortDependencies>scope</sortDependencies>
-            <verifyFail>stop</verifyFail>
-          </configuration>
-          <executions>
-            <execution>
-              <phase>validate</phase>
-              <goals>
-                <goal>verify</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>versions-maven-plugin</artifactId>
-          <version>2.7</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.0.0-M2</version>
-          <executions>
-            <execution>
-              <id>enforce-maven</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <configuration>
-                <rules>
-                  <requireMavenVersion>
-                    <version>3.1.1</version>
-                  </requireMavenVersion>
-                </rules>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.0</version>
-          <dependencies>
-            <dependency>
-              <groupId>com.puppycrawl.tools</groupId>
-              <artifactId>checkstyle</artifactId>
-              <version>8.25</version>
-            </dependency>
-          </dependencies>
-          <configuration>
-            <configLocation>src/main/config/google_checks.xml</configLocation>
-            <suppressionsLocation>src/main/config/suppressions.xml
-            </suppressionsLocation>
-            <failOnViolation>true</failOnViolation>
-            <includeTestSourceDirectory>true</includeTestSourceDirectory>
-            <resourceIncludes>**/*.json, **/*.proto, **/*.xml, **/*.yaml, **/*.yml
-            </resourceIncludes>
-            <sourceDirectories>
-              <sourceDirectory>src/main/java</sourceDirectory>
-            </sourceDirectories>
-            <testSourceDirectories>
-              <testSourceDirectory>src/test/java</testSourceDirectory>
-              <testSourceDirectory>src/it/java</testSourceDirectory>
-            </testSourceDirectories>
-            <consoleOutput>true</consoleOutput>
-          </configuration>
-          <executions>
-            <execution>
-              <id>quality-metric-checkstyle</id>
-              <phase>validate</phase>
-              <goals>
-                <goal>check</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>com.github.spotbugs</groupId>
-          <artifactId>spotbugs-maven-plugin</artifactId>
-          <version>3.1.12</version>
-          <configuration>
-            <excludeFilterFile>src/main/config/spotbugs-exclude-filter.xml</excludeFilterFile>
-          </configuration>
-          <executions>
-            <execution>
-              <id>quality-metric-spotbugs</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>check</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>com.github.ekryd.sortpom</groupId>
+        <artifactId>sortpom-maven-plugin</artifactId>
+        <version>2.10.0</version>
+        <configuration>
+          <sortOrderFile>src/main/config/pom_stylesheet.xml</sortOrderFile>
+          <lineSeparator>\n</lineSeparator>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <sortProperties>true</sortProperties>
+          <keepBlankLines>true</keepBlankLines>
+          <sortDependencies>scope</sortDependencies>
+          <verifyFail>stop</verifyFail>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.7</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>3.1.1</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.0</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>8.25</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <configLocation>src/main/config/google_checks.xml</configLocation>
+          <suppressionsLocation>src/main/config/suppressions.xml</suppressionsLocation>
+          <failOnViolation>true</failOnViolation>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+          <resourceIncludes>**/*.json, **/*.proto, **/*.xml, **/*.yaml, **/*.yml</resourceIncludes>
+          <sourceDirectories>
+            <sourceDirectory>src/main/java</sourceDirectory>
+          </sourceDirectories>
+          <testSourceDirectories>
+            <testSourceDirectory>src/test/java</testSourceDirectory>
+            <testSourceDirectory>src/it/java</testSourceDirectory>
+          </testSourceDirectories>
+          <consoleOutput>true</consoleOutput>
+        </configuration>
+        <executions>
+          <execution>
+            <id>quality-metric-checkstyle</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>3.1.12</version>
+        <configuration>
+          <excludeFilterFile>src/main/config/spotbugs-exclude-filter.xml</excludeFilterFile>
+        </configuration>
+        <executions>
+          <execution>
+            <id>quality-metric-spotbugs</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 
   <!-- //////////////////////////////////////////// -->
@@ -193,9 +196,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <spring.boot.version>1.5.22.RELEASE</spring.boot.version>
   </properties>
-  <prerequisites>
-    <maven>3.1.1</maven>
-  </prerequisites>
 
   <!-- //////////////////////////////////////////// -->
 </project>
