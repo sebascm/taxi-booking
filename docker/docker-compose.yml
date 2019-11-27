@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  config-service:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./config-service/target/:/opt/
+    image: config-service:latest
+
+    ports:
+      - 8888:8888
